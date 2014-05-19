@@ -8,17 +8,17 @@
 #include "TDDHelper.h"
 #include "TDDMenu.h"
 
-void TDDMenuTest::callback(Object * sender)
+void TDDMenuTest::callback(Ref * sender)
 {
 	log("TDDMenuTest:callback is called");
-	int count = mMenuArray->count();
+	long count = mMenuArray.size();
 	
-	String *nameStr = String::createWithFormat("newMenu-%d", count);
+	char tempStr[100];
+	sprintf(tempStr, "newMenu-%ld", count);
 	
-	MenuItem *menuItem = TDDHelper::createMenuItem(nameStr->getCString(),
-												   CC_CALLBACK_1(TDDMenuTest::callback, this));
-	mMenuArray->addObject(menuItem);
-	
+	MenuItem *menuItem = TDDHelper::createMenuItem(tempStr,
+							CC_CALLBACK_1(TDDMenuTest::callback, this));
+	mMenuArray.pushBack(menuItem);
 
 	// update the menu items
 	mMenu->setMenuItems(mMenuArray);
@@ -26,7 +26,6 @@ void TDDMenuTest::callback(Object * sender)
 
 void TDDMenuTest::tearDown()
 {
-	CC_SAFE_RELEASE_NULL(mMenuArray);
 }
 
 void TDDMenuTest::setUp()
@@ -37,19 +36,17 @@ void TDDMenuTest::setUp()
 	//Size size = TDDHelper::getScreenSize();
 
 	// Construct the array
-	Array *menuArray = Array::create();
-	menuArray->retain();
-	mMenuArray = menuArray;
+	Vector<MenuItem *> menuArray;
 	
 	for (int i = 0; i < 10; i++)
-    {
-		String *nameStr = String::createWithFormat("menu-%d", i);
+	{
+		char tempStr[100];
+		sprintf(tempStr, "menu-%d", i);
 
-		MenuItem *menuItem = TDDHelper::createMenuItem(nameStr->getCString(),
-											 CC_CALLBACK_1(TDDMenuTest::callback, this));
-		mMenuArray->addObject(menuItem);
-    }
-	
+		MenuItem *menuItem = TDDHelper::createMenuItem(tempStr,
+													   CC_CALLBACK_1(TDDMenuTest::callback, this));
+		mMenuArray.pushBack(menuItem);
+	}
 	
 	TDDMenu *menu = new TDDMenu(Size(600, 1000), Color4B(100, 100, 200, 100), 80);
 	this->addChild(menu);

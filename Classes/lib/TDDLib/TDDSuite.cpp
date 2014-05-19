@@ -1,6 +1,6 @@
 //
 //  TTDSuite.cpp
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
@@ -94,13 +94,13 @@ TDDSuiteLayer::~TDDSuiteLayer()
 }
 
 
-void TDDSuiteLayer::goBack(Object * sender)
+void TDDSuiteLayer::goBack(Ref * sender)
 {
 	log("goback to main");
 	Director::getInstance()->popToRootScene();
 }
 
-void TDDSuiteLayer::filterTest(Object * sender)
+void TDDSuiteLayer::filterTest(Ref * sender)
 {
 	log("filterTest");
 	
@@ -183,7 +183,8 @@ const char *TDDSuiteLayer::getFilterName()
 
 void TDDSuiteLayer::refreshTestMenu()
 {
-	Array *menuArray = Array::createWithCapacity(gTestCount);
+	//Array *menuArray = Array::createWithCapacity(gTestCount);
+	Vector<MenuItem *> menuArray;
 	
 	
 	// TODO: Filtering !!!!
@@ -200,7 +201,7 @@ void TDDSuiteLayer::refreshTestMenu()
 		menuItem = TDDHelper::createMenuItem(name, CC_CALLBACK_1(TDDSuiteLayer::menuCallback, this));
 		menuItem->setTag(i);	// this must be the index of the test in the gTestArray
 		
-		menuArray->addObject(menuItem);
+		menuArray.pushBack(menuItem);
     }
 	
 	mTestMenu->setMenuItems(menuArray);
@@ -226,7 +227,7 @@ void TDDSuiteLayer::runTest(int testIdx)
     }
 }
 
-void TDDSuiteLayer::menuCallback(Object * sender)
+void TDDSuiteLayer::menuCallback(Ref * sender)
 {
 	log("menuCallback: is called");
 	MenuItem *item = dynamic_cast<MenuItem *>(sender);

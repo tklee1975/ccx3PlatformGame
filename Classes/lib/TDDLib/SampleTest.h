@@ -1,14 +1,14 @@
 #ifdef ENABLE_TDD
 //
 //  SampleTest.h
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 15/12/13.
 //
 //
 
-#ifndef __Dg__SampleTest__
-#define __Dg__SampleTest__
+#ifndef __TDDLib__SampleTest__
+#define __TDDLib__SampleTest__
 
 #include <iostream>
 #include "TDDTest.h"
@@ -18,12 +18,12 @@ class TDDSample1 : public TDDTest
 protected:
 	virtual void setUp();
 	virtual void tearDown();
-	virtual void setSubTest(Array *menuArray);
+	virtual void setSubTest(Vector<MenuItem *> &menuArray);
 	
 private:
-	void test1(Object *sender);
-	void test2(Object *sender);
-	void test3(Object *sender);
+	void test1(Ref *sender);
+	void test2(Ref *sender);
+	void test3(Ref *sender);
 };
 
 #endif /* defined(__Dg__SampleTest__) */

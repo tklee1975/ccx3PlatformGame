@@ -20,11 +20,11 @@ class TDDMenuTest : public TDDTest
 	virtual void tearDown();
 	
 private:
-	void callback(Object * sender);
+	void callback(Ref * sender);
 	
 private:
 	TDDMenu *mMenu;
-	Array *mMenuArray;
+	Vector<MenuItem *> mMenuArray;
 }; 
 
 #endif

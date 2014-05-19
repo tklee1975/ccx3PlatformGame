@@ -1,6 +1,6 @@
 //
 //  TDDMenu.cpp
-//  Dg
+//  TDDLib
 //
 //	The list of the test
 //
@@ -51,7 +51,7 @@ TDDMenu::~TDDMenu()
 {
 }
 
-void TDDMenu::addMenuItems(Array *itemArray)
+void TDDMenu::addMenuItems(Vector<MenuItem *> &itemArray)
 {
 	float layerH = mMainLayer->getContentSize().height;
 	float layerW = mMainLayer->getContentSize().width;
@@ -59,27 +59,40 @@ void TDDMenu::addMenuItems(Array *itemArray)
 	Point pos = Point(layerW / 2, layerH - mRowHeight / 2);
 	
 	int order = 10000;
-	Object* child;
-	CCARRAY_FOREACH(itemArray, child)
-	{
-		MenuItem *menuItem = static_cast<MenuItem *>(child);
+	
+	for(int i=0; i<itemArray.size(); i++) {
+		MenuItem *menuItem = itemArray.at(i);
 		if(! menuItem) { continue; }
-
+		
 		menuItem->setPosition(pos);
 		mMenu->addChild(menuItem, order);
 		order++;
 		
 		pos.y -= mRowHeight;
 	}
+	
+	
+//	Ref *child;
+//	CCARRAY_FOREACH(itemArray, child)
+//	{
+//		MenuItem *menuItem = static_cast<MenuItem *>(child);
+//		if(! menuItem) { continue; }
+//
+//		menuItem->setPosition(pos);
+//		mMenu->addChild(menuItem, order);
+//		order++;
+//		
+//		pos.y -= mRowHeight;
+//	}
 }
 
-void TDDMenu::setMenuItems(Array *itemArray)
+void TDDMenu::setMenuItems(Vector<MenuItem *> &itemArray)
 {
 	// clean up first
 	// mMainLayer->removeAllChildren();
 	mMenu->removeAllChildren();
 	
-	int numMenus = itemArray->count();
+	int numMenus = itemArray.size();
 	float viewH = this->getViewSize().height;
 	float viewW = this->getViewSize().width;
 	

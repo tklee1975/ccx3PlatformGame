@@ -1,6 +1,6 @@
 //
 //  TDDHelper.cpp
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
@@ -9,7 +9,7 @@
 #include "TDDHelper.h"
 #include "TDDSuite.h"
 
-#include "GUIHelper.h"
+//#include "GUIHelper.h"
 
 #ifdef ENABLE_TDD
 #define HAS_TDD		true
@@ -23,7 +23,7 @@ static std::string sFilterPattern("");
 
 Size TDDHelper::getScreenSize()
 {
-	auto glView = EGLView::getInstance();
+	auto glView = Director::getInstance()->getOpenGLView();
 	return glView->getDesignResolutionSize();
 }
 
@@ -94,7 +94,7 @@ void TDDHelper::addTestButton(Node *parent, Point pos)
 		return;
 	}
 	
-	Menu *menu = createMenu(pos, "Test!", [](Object *sender) {
+	Menu *menu = createMenu(pos, "Test!", [](Ref *sender) {
 												TDDHelper::showTests();
 											}
 							);
@@ -163,6 +163,7 @@ const char *TDDHelper::getFilter()
 	return sFilterPattern.c_str();
 }
 
+/*
 Layer *TDDHelper::createKeyPadLayer(Object *target, Control::Handler handler)
 {
 	Layer *layer = Layer::create();
@@ -199,4 +200,4 @@ Layer *TDDHelper::createKeyPadLayer(Object *target, Control::Handler handler)
 	layer->addChild(button);
 
 	return layer;
-}
+} */

@@ -1,7 +1,7 @@
 #ifdef ENABLE_TDD
 //
 //  TDDTest.cpp
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
@@ -127,7 +127,9 @@ void TDDTest::setUp()
 {
 	log("TDDTest::setUp is called");
 	
-	LabelTTF *label = LabelTTF::create("Please code something!!", kDefaultFont, kDefaultFontSize);
+//	LabelTTF *label = LabelTTF::create("Please code something!!", kDefaultFont, kDefaultFontSize);
+
+	auto label = Label::createWithTTF("Please code something", "Marker Felt.ttf", kDefaultFontSize);
 	
 	Size size = TDDHelper::getScreenSize();
 	
@@ -162,7 +164,7 @@ void TDDTest::onExit()
 }
 
 
-void TDDTest::addSubTestMenu(Array *menuArray, const char *name, const ccMenuCallback& callback)
+void TDDTest::addSubTestMenu(Vector<MenuItem *> &menuArray, const char *name, const ccMenuCallback& callback)
 {
 	// trim the "prefix before ::"
 	std::string trimName;
@@ -171,16 +173,18 @@ void TDDTest::addSubTestMenu(Array *menuArray, const char *name, const ccMenuCal
 	
 	// Create menu and add it!!
 	MenuItem *menuItem = TDDHelper::createMenuItem(trimName.c_str(), callback);
-	menuArray->addObject(menuItem);
+	menuArray.pushBack(menuItem);
+	//menuArray->addObject(menuItem);
+//	menuArray.
 }
 
 
-void TDDTest::sampleTest(Object *sender)
+void TDDTest::sampleTest(Ref *sender)
 {
 	log("sampleTest is called");
 }
 
-void TDDTest::setSubTest(Array *menuArray)
+void TDDTest::setSubTest(Vector<MenuItem *> &menuArray)
 {
 	// These are used during the development of the TDDTest
 //	addSubTestMenu(menuArray, "Test1", CC_CALLBACK_1(TDDTest::sampleTest, this));
@@ -199,7 +203,7 @@ Menu *TDDTest::createBackMenu()
 	
 	
 	MenuItemLabel *menuItem = MenuItemLabel::create(label,
-										  [](Object *sender) {
+										  [](Ref *sender) {
 											  log("createBackMenu: called");
 											  Director::getInstance()->popScene();
 										  }
@@ -209,7 +213,7 @@ Menu *TDDTest::createBackMenu()
 	return menu;
 }
 
-void TDDTest::toggleMenu(Object *sender)
+void TDDTest::toggleMenu(Ref *sender)
 {
 	log("TODO: Show/Hide the menu");
 	MenuItemLabel *menuItem = static_cast<MenuItemLabel *>(sender);
@@ -283,10 +287,11 @@ void TDDTest::setupControlLayer()
 
 TDDMenu *TDDTest::createTDDMenu()
 {
-	Array *menuArray = Array::create();
+	//Array *menuArray = Array::create();
+	Vector<MenuItem *> menuArray;
 	setSubTest(menuArray);
 
-	if(menuArray->count() == 0) {
+	if(menuArray.size() == 0) {
 		return NULL;
 	}
 	

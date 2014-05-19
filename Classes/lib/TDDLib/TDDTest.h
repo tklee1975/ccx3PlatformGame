@@ -1,7 +1,7 @@
 #ifdef ENABLE_TDD
 //
 //  TDDTest.h
-//  Dg
+//  TDDLib
 //
 //	Base Class of the Test Driven Unit Test
 //
@@ -9,8 +9,8 @@
 //
 //
 
-#ifndef __Dg__TDDTest__
-#define __Dg__TDDTest__
+#ifndef __TDDLib__TDDTest__
+#define __TDDLib__TDDTest__
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
@@ -42,8 +42,8 @@ protected:
 	virtual void setUp();
 	virtual void tearDown();
 	virtual bool showStat();
-	virtual void setSubTest(Array *menuArray);
-	void addSubTestMenu(Array *menuArray, const char *name, const ccMenuCallback& callback);
+	virtual void setSubTest(Vector<MenuItem *> &menuArray);
+	void addSubTestMenu(Vector<MenuItem *> &menuArray, const char *name, const ccMenuCallback& callback);
 	void hideMenu();
 	void hideToolBar();
 	void setMenuVisible(bool flag);
@@ -53,7 +53,7 @@ private:
 	void setupGUI();
 	void configTest();
 	void resetConfig();
-	void sampleTest(Object *sender);
+	void sampleTest(Ref *sender);
 	
 	Menu *createBackMenu();
 	Menu *createToggleMenu();
@@ -61,8 +61,8 @@ private:
 	void setupControlLayer();
 	LayerColor *createToolBarLayer(bool hasMenu);
 	TDDMenu *createTDDMenu();
-	void toggleMenu(Object *sender);
-	void toggleStat(Object *sender);
+	void toggleMenu(Ref *sender);
+	void toggleStat(Ref *sender);
 	
 // private data
 private:

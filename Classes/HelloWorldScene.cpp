@@ -1,8 +1,9 @@
 #include "HelloWorldScene.h"
+#include "TDDHelper.h"
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
+Scene *HelloWorld::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
@@ -53,8 +54,9 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
+	//auto label = Label::createWithTTF("PlatformGame", "Arial", 20);
     
-    auto label = LabelTTF::create("Hello World", "Arial", 24);
+	auto label = LabelTTF::create("Hello World", "Arial", 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
@@ -72,6 +74,10 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
+	
+	// test button
+	TDDHelper::addTestButton(this, Point(visibleSize.width/2, 50));
+	
     return true;
 }
 

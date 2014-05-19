@@ -1,13 +1,14 @@
 //
 //  TDDTypes.h
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
 //
 
-#ifndef Dg_TDDTypes_h
-#define Dg_TDDTypes_h
+#ifndef TDDLib_TDDTypes_h
+#define TDDLib_TDDTypes_h
+
 // C++ includes
 #include <map>
 #include <functional>

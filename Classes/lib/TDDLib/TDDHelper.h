@@ -1,13 +1,13 @@
 //
 //  TDDHelper.h
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
 //
 
-#ifndef __Dg__TDDHelper__
-#define __Dg__TDDHelper__
+#ifndef __TDDLib__TDDHelper__
+#define __TDDLib__TDDHelper__
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
@@ -41,7 +41,7 @@ public:
 	static void saveFilter(const char *pattern);
 	static const char *getFilter();
 	
-	static Layer *createKeyPadLayer(Object *target, Control::Handler handler);
+	// static Layer *createKeyPadLayer(Object *target, Control::Handler handler);
 };
 
 #endif /* defined(__Dg__TDDHelper__) */

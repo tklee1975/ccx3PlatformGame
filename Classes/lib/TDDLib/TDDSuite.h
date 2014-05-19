@@ -1,13 +1,13 @@
 //
 //  TTDSuite.h
-//  Dg
+//  TDDLib
 //
 //  Created by Ken Lee on 13/12/13.
 //
 //
 
-#ifndef __Dg__TTDSuite__
-#define __Dg__TTDSuite__
+#ifndef __TDDLib__TTDSuite__
+#define __TDDLib__TTDSuite__
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
@@ -37,9 +37,9 @@ public:
     TDDSuiteLayer();
     ~TDDSuiteLayer();
 
-	void goBack(Object * sender);
-	void filterTest(Object * sender);
-	void menuCallback(Object * sender);
+	void goBack(Ref *sender);
+	void filterTest(Ref *sender);
+	void menuCallback(Ref *sender);
 	void runTest(int testIdx);
 	
 #pragma mark -

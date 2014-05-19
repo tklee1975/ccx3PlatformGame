@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __Dg__TDDMenu__
-#define __Dg__TDDMenu__
+#ifndef __TDDLib__TDDMenu__
+#define __TDDLib__TDDMenu__
 
 #include <iostream>
 
@@ -25,7 +25,7 @@ public:
 	TDDMenu(Size size, Color4B color, float rowHeight);
 	~TDDMenu();
 	
-	void setMenuItems(Array *itemArray);
+	void setMenuItems(Vector<MenuItem *> &itemArray);
 	
 	// private data
 private:
@@ -36,7 +36,7 @@ private:
 	
 	// private method
 private:
-	void addMenuItems(Array *itemArray);
+	void addMenuItems(Vector<MenuItem *> &itemArray);
 };
 
 
