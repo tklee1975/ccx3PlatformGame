@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "TDDHelper.h"
+#include "AppConstant.h"
 
 USING_NS_CC;
 
@@ -56,7 +57,7 @@ bool HelloWorld::init()
     // create and initialize a label
 	//auto label = Label::createWithTTF("PlatformGame", "Arial", 20);
     
-	auto label = LabelTTF::create("Hello World", "Arial", 24);
+	auto label = LabelTTF::create("Hello World", DEFAULT_FONT, 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,

@@ -28,6 +28,9 @@ using namespace std;
 class TDDHelper
 {
 public:
+	static std::string getVersion();
+	static std::string getLibraryName();
+	
 	static Size getScreenSize();
 	static Point getAlignPoint(float x, float y, TDDAlign halign, TDDAlign valign);
 	

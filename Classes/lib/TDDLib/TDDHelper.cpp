@@ -11,6 +11,10 @@
 
 //#include "GUIHelper.h"
 
+#define kLibName			"TDDLib+cocos2dx"
+#define kLibVersion			"0.1"
+
+
 #ifdef ENABLE_TDD
 #define HAS_TDD		true
 #else
@@ -161,6 +165,16 @@ const char *TDDHelper::getFilter()
 	log("Load filter for key=%s result=%s",  kTDDFilterKey, sFilterPattern.c_str());
 	
 	return sFilterPattern.c_str();
+}
+
+std::string TDDHelper::getVersion()
+{
+	return kLibVersion;
+}
+
+std::string TDDHelper::getLibraryName()
+{
+	return kLibName;
 }
 
 /*

@@ -11,7 +11,8 @@
 #define TDDLib_TDDDefine_h
 
 #include "TDDTypes.h"
-#include "TDDTest.h"		// contain the data structure 
+#include "TDDTest.h"		// contain the data structure
+#include "ExampleTest.h"
 
 // Add the Header here!
 #include "SampleTest.h"
@@ -24,6 +25,7 @@ TDDTestCase gTestArray[] =
 {
 	ADD_CASE(TDDTest),
 	ADD_CASE(TDDSample1),
+	ADD_CASE(ExampleTest),
 };
 
 #endif

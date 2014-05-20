@@ -92,7 +92,7 @@ void TDDMenu::setMenuItems(Vector<MenuItem *> &itemArray)
 	// mMainLayer->removeAllChildren();
 	mMenu->removeAllChildren();
 	
-	int numMenus = itemArray.size();
+	int numMenus = (int) itemArray.size();
 	float viewH = this->getViewSize().height;
 	float viewW = this->getViewSize().width;
 	

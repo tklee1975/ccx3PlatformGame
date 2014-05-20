@@ -75,6 +75,10 @@
 		7300608319211C8800A22FE1 /* TDDMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7300606D19211B9C00A22FE1 /* TDDMenu.cpp */; };
 		7300608419211C8C00A22FE1 /* TDDHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7300606A19211B9C00A22FE1 /* TDDHelper.cpp */; };
 		7300608519211C9000A22FE1 /* SampleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7300606719211B9C00A22FE1 /* SampleTest.cpp */; };
+		730233A6192BA75000D49214 /* AppConstant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730233A4192BA75000D49214 /* AppConstant.cpp */; };
+		730233A7192BA75000D49214 /* AppConstant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730233A4192BA75000D49214 /* AppConstant.cpp */; };
+		730233AF192BAB8000D49214 /* ExampleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730233AD192BAB8000D49214 /* ExampleTest.cpp */; };
+		730233B0192BAB8000D49214 /* ExampleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730233AD192BAB8000D49214 /* ExampleTest.cpp */; };
 		732A5CCA1922726C0050A662 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732A5CC91922726C0050A662 /* Marker Felt.ttf */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -291,6 +295,10 @@
 		7300607519211B9C00A22FE1 /* TDDTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDTypes.h; sourceTree = "<group>"; };
 		7300607719211B9C00A22FE1 /* VJoystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VJoystick.cpp; sourceTree = "<group>"; };
 		7300607819211B9C00A22FE1 /* VJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJoystick.h; sourceTree = "<group>"; };
+		730233A4192BA75000D49214 /* AppConstant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppConstant.cpp; path = ../Classes/AppConstant.cpp; sourceTree = "<group>"; };
+		730233A5192BA75000D49214 /* AppConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstant.h; path = ../Classes/AppConstant.h; sourceTree = "<group>"; };
+		730233AD192BAB8000D49214 /* ExampleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleTest.cpp; path = ../Classes/UnitTest/ExampleTest.cpp; sourceTree = "<group>"; };
+		730233AE192BAB8000D49214 /* ExampleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleTest.h; path = ../Classes/UnitTest/ExampleTest.h; sourceTree = "<group>"; };
 		732A5CC91922726C0050A662 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -368,7 +376,9 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7300606319211AAB00A22FE1 /* lib */,
+				730233A8192BA7CB00D49214 /* UnitTest */,
+				730233A1192BA73100D49214 /* Common */,
+				7300606319211AAB00A22FE1 /* Lib */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -485,13 +495,13 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
-		7300606319211AAB00A22FE1 /* lib */ = {
+		7300606319211AAB00A22FE1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
 				7300606619211B9C00A22FE1 /* TDDLib */,
 				7300607619211B9C00A22FE1 /* HSJoystick */,
 			);
-			name = lib;
+			name = Lib;
 			sourceTree = "<group>";
 		};
 		7300606619211B9C00A22FE1 /* TDDLib */ = {
@@ -525,6 +535,24 @@
 			);
 			name = HSJoystick;
 			path = ../Classes/lib/HSJoystick;
+			sourceTree = "<group>";
+		};
+		730233A1192BA73100D49214 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				730233A4192BA75000D49214 /* AppConstant.cpp */,
+				730233A5192BA75000D49214 /* AppConstant.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		730233A8192BA7CB00D49214 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				730233AD192BAB8000D49214 /* ExampleTest.cpp */,
+				730233AE192BAB8000D49214 /* ExampleTest.h */,
+			);
+			name = UnitTest;
 			sourceTree = "<group>";
 		};
 		732A5CC81922726C0050A662 /* fonts */ = {
@@ -754,9 +782,11 @@
 			files = (
 				7300607A19211B9C00A22FE1 /* TDDHelper.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				730233AF192BAB8000D49214 /* ExampleTest.cpp in Sources */,
 				7300607919211B9C00A22FE1 /* SampleTest.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				730233A6192BA75000D49214 /* AppConstant.cpp in Sources */,
 				7300607E19211B9C00A22FE1 /* TDDTest.cpp in Sources */,
 				7300607D19211B9C00A22FE1 /* TDDSuite.cpp in Sources */,
 				7300607B19211B9C00A22FE1 /* TDDMenu.cpp in Sources */,
@@ -774,6 +804,8 @@
 				7300608119211C8000A22FE1 /* TDDSuite.cpp in Sources */,
 				7300608219211C8500A22FE1 /* TDDMenuTest.cpp in Sources */,
 				7300608419211C8C00A22FE1 /* TDDHelper.cpp in Sources */,
+				730233A7192BA75000D49214 /* AppConstant.cpp in Sources */,
+				730233B0192BAB8000D49214 /* ExampleTest.cpp in Sources */,
 				7300608319211C8800A22FE1 /* TDDMenu.cpp in Sources */,
 				7300608519211C9000A22FE1 /* SampleTest.cpp in Sources */,
 				7300608019211C7C00A22FE1 /* TDDTest.cpp in Sources */,

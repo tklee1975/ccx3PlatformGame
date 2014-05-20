@@ -129,7 +129,13 @@ void TDDTest::setUp()
 	
 //	LabelTTF *label = LabelTTF::create("Please code something!!", kDefaultFont, kDefaultFontSize);
 
-	auto label = Label::createWithTTF("Please code something", "Marker Felt.ttf", kDefaultFontSize);
+	char tempStr[200];
+	sprintf(tempStr, "Enjoy the Test Driven Development!\n(%s %s)",
+								TDDHelper::getLibraryName().c_str(),
+										TDDHelper::getVersion().c_str());
+	
+	//auto label = Label::createWithTTF(tempStr, "Marker Felt.ttf", kDefaultFontSize);
+	auto label = LabelTTF::create(tempStr, kDefaultFont, kDefaultFontSize);
 	
 	Size size = TDDHelper::getScreenSize();
 	
@@ -312,7 +318,7 @@ TDDMenu *TDDTest::createTDDMenu()
 	return menu;
 }
 
-void TDDTest::toggleStat(Object *sender)
+void TDDTest::toggleStat(Ref *sender)
 {
 	Director *director = Director::getInstance();
 	bool hasStat = director->isDisplayStats();
